@@ -1,0 +1,27 @@
+{{!-- all the content that will be on the page --}}
+{{!-- banner image in header --}}
+<h2>Add a burger</h2>
+<form class="create-form">
+    <div class="form-group">
+        <label for="entry">Burger name:</label>
+        <input type="text" name="name" id="entry">
+    </div>
+    <button type="submit">Add burger</button>
+</form>
+{{!-- have this div on the left side for new, undevoured burgers --}}
+<div>
+    <ul>
+        {{#each burgers}}
+            {{> burgers/burger_new devoured=false}}
+        {{/each}}
+    </ul>
+</div>
+{{!-- have this div on the right side for devoured burgers --}}
+<div>
+    <ul>
+        {{#each burgers}}
+            {{> burgers/burger_eaten devoured=true}}
+        {{/each}}
+    </ul>
+</div>
+{{!-- something in footer, along with copyright Kay Murray --}}
