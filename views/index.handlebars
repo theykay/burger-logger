@@ -6,13 +6,15 @@
         <label for="entry">Burger name:</label>
         <input type="text" name="name" id="entry">
     </div>
-    <button type="submit">Add burger</button>
+    <button type="submit" id="add">Add burger</button>
 </form>
 {{!-- have this div on the left side for new, undevoured burgers --}}
 <div>
     <ul>
         {{#each burgers}}
-            {{> burgers/burger_new devoured=false}}
+            {{#unless devoured}}
+                {{> burger_new devoured=false}}
+            {{/unless}}
         {{/each}}
     </ul>
 </div>
@@ -20,7 +22,9 @@
 <div>
     <ul>
         {{#each burgers}}
-            {{> burgers/burger_eaten devoured=true}}
+            {{#if devoured}}
+                {{> burger_eaten devoured=true}}
+            {{/if}}
         {{/each}}
     </ul>
 </div>
