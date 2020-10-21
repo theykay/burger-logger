@@ -44,7 +44,6 @@ const orm = {
         var queryString = "INSERT INTO " + table;
         queryString += "(" + cols.toString() + ") ";
         queryString += "VALUES (" + printQuestionMarks(vals.length) + ")";
-        console.log(queryString);
         connection.query(queryString, vals, (err, result) => {
             if (err) throw err;
             cb(result);
