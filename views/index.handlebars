@@ -1,36 +1,47 @@
 {{!-- all the content that will be on the page --}}
 {{!-- banner image in header --}}
 <header>
-    <div>
+    <div id="burger-gif">
         <img src="/assets/images/burger.gif" alt="" srcset="">
     </div>
-</header>
-<h2>Add a burger</h2>
-<form class="create-form">
-    <div class="form-group">
-        <label for="entry">Burger name:</label>
-        <input type="text" name="name" id="entry">
+    <div id="submission-form">
+        <h2>wot will you chomp</h2>
+        <form class="create-form" autocomplete="off">
+            <div class="form-group">
+                {{!-- <label for="entry">Burger name:</label> --}}
+                <input type="text" name="name" id="entry">
+            </div>
+            <button type="submit" id="add">add dat borger</button>
+        </form>
     </div>
-    <button type="submit" id="add">Add burger</button>
-</form>
-{{!-- have this div on the left side for new, undevoured burgers --}}
-<div>
-    <ul>
-        {{#each burgers}}
+</header>
+<div class="lists">
+    {{!-- have this div on the left side for new, undevoured burgers --}}
+    <div id="new-burgers">
+        <h4>can eat</h4>
+        <ul>
+            {{#each burgers}}
             {{#unless devoured}}
-                {{> burger_new devoured=false}}
+            {{> burger_new devoured=false}}
             {{/unless}}
-        {{/each}}
-    </ul>
-</div>
-{{!-- have this div on the right side for devoured burgers --}}
-<div>
-    <ul>
-        {{#each burgers}}
+            {{/each}}
+        </ul>
+    </div>
+    {{!-- divider to separate lists --}}
+    <div id="divider">
+
+    </div>
+
+    {{!-- have this div on the right side for devoured burgers --}}
+    <div id="eaten-burgers">
+        <h3>murgered burders</h3>
+        <ul>
+            {{#each burgers}}
             {{#if devoured}}
-                {{> burger_eaten devoured=true}}
+            {{> burger_eaten devoured=true}}
             {{/if}}
-        {{/each}}
-    </ul>
+            {{/each}}
+        </ul>
+    </div>
 </div>
 {{!-- something in footer, along with copyright Kay Murray --}}

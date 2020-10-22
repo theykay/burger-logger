@@ -1,0 +1,126 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fascinate', cursive;
+    background-color: #ffe861;
+}
+
+header {
+    margin: 0;
+    padding: 1rem;
+    display: grid;
+    justify-content: center;
+}
+
+img {
+    margin: .5rem;
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        grid-template-rows: 45% auto 45%;
+    }
+    
+    #burger-gif {
+        grid-row-start: 1;
+    }
+    
+    #submission-form {
+        grid-row-start: 3
+    }
+    
+    .lists {
+        display: grid;
+        grid-template-rows: auto 20px auto;
+        justify-content: center;
+    }
+    
+    #new-burgers {
+        grid-row-start: 1;
+    }
+    
+    #divider {
+        grid-row-start: 2;
+    }
+    
+    #eaten-burgers {
+        grid-row-start: 3;
+    }
+    
+} 
+
+@media only screen and (min-width: 769px) {
+    header {
+        grid-template-columns: 20% 20% 20% 20% 20%;
+    }
+    
+    #burger-gif {
+        grid-column-start: 2;
+    }
+    
+    #submission-form {
+        grid-column-start: 4;
+    }
+    
+    .lists {
+        display: grid;
+        grid-template-columns: auto 20px auto;
+        justify-content: space-around;
+    }
+    
+    #new-burgers {
+        grid-column-start: 1;
+    }
+    
+    #divider {
+        grid-column-start: 2;
+    }
+    
+    #eaten-burgers {
+        grid-column-start: 3;
+    }
+    
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    padding-left: 1rem;
+}
+
+.burger-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#new-burgers {
+    justify-content: center;
+}
+
+#divider {
+    background-image: url("../images/burger.gif");
+    background-repeat: repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.burger-li {
+    grid-column-start: 1;
+}
+
+.devour {
+    grid-column-end: 3;
+    width: 4rem;
+    margin-left: 1rem;
+}
+
+
+li.new {
+    list-style-type: "\1F354";
+}
+        
+li.eaten {
+    list-style-type: "\1F47B";
+}
