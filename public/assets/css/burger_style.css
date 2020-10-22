@@ -10,6 +10,7 @@ header {
     padding: 1rem;
     display: grid;
     justify-content: center;
+    align-items: center;
 }
 
 img {
@@ -26,7 +27,8 @@ img {
     }
     
     #submission-form {
-        grid-row-start: 3
+        grid-row-start: 3;
+        align-self: center;
     }
     
     .lists {
