@@ -17,7 +17,7 @@ Web application that asks the user to type the name of a burger in a text field.
 `web-based app, no installation required`
 
 ## Usage
-`enter and submit burger name, click "chomp" to eat burger`
+`enter and submit burger name, click "chomp" to eat burger`\
 ![gif of application running](./public/assets/images/burger-app.gif)
 
 ## License
